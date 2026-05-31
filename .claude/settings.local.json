@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//private/tmp/**)",
+      "Bash(nohup python3 -m http.server 8000)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" http://localhost:8000/index.html)",
+      "Bash(rm -rf wref)",
+      "Bash(mkdir wref *)",
+      "Bash(ffmpeg -v error -i \"/Users/nirunifonseka/Downloads/ScreenRecording_05-31-2026 00-08-20_1.mov\" -vf \"fps=3,scale=480:-1\" wref/f_%03d.png)",
+      "Read(//opt/homebrew/bin/**)",
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/nirunifonseka/Downloads/ScreenRecording_05-31-2026 00-08-20_1.mov\")",
+      "Bash(qlmanage -t -s 600 -o wref \"/Users/nirunifonseka/Downloads/ScreenRecording_05-31-2026 00-08-20_1.mov\")",
+      "Bash(python3 -c \"import cv2; print\\('cv2', cv2.__version__\\)\")",
+      "Bash(python3 -c \"import imageio; print\\('imageio ok'\\)\")",
+      "Read(//Users/nirunifonseka/Downloads/**)",
+      "Bash(curl -s -o /dev/null -w \"html:%{http_code} \" http://localhost:8000/index.html)",
+      "Bash(curl -s -o /dev/null -w \"css:%{http_code} \" http://localhost:8000/styles.css)",
+      "Bash(curl -s -o /dev/null -w \"js:%{http_code}\\\\n\" http://localhost:8000/app.js)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(xargs kill)"
+    ]
+  }
+}
